@@ -71,4 +71,4 @@ def token(**params):
             "message":"Email tidak terdaftar"
         }
         
-    return jsonify(data)
+    return jsonify.badRequest(data)
