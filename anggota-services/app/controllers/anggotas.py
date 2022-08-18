@@ -1,5 +1,5 @@
 from app.models.anggotas import database
-from flask import Flask, jsonify, request, make_response
+from flask import Flask, jsonify, request
 from flask_jwt_extended import *
 import json, datetime
 
@@ -59,7 +59,7 @@ def token(**params):
             "email" : dbresult[5]            
         }
         expires = datetime.timedelta(days=1)
-        expires_refresh = datetime.timedelta(days=3)
+        # expires_refresh = datetime.timedelta(days=3)
         access_token = create_access_token(user, fresh=True, expires_delta=expires)
         
         data = {
@@ -71,4 +71,4 @@ def token(**params):
             "message":"Email tidak terdaftar"
         }
         
-    return make_response(jsonify(data), 400)
+    return jsonify(data)
