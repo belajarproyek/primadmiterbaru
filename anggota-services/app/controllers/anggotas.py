@@ -1,5 +1,5 @@
 from app.models.anggotas import database
-from flask import Flask, jsonify, request,make_response
+from flask import Flask, jsonify, request
 from flask_jwt_extended import *
 import json, datetime
 
@@ -66,11 +66,9 @@ def token(**params):
             "data": user,
             "token_access": access_token
         }
-        return make_response(jsonify(data),200)
     else:
         data = {
             "message":"Email tidak terdaftar"
         }
-        return make_response(jsonify(data), 400)
         
-    
+    return jsonify(data)
