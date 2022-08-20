@@ -30,11 +30,11 @@ def search_instansis_id(**params):
     result["_id"] = objIdToStr(result)
     return result
         
-def ubah_data(**params):
-    try:
-        db.updateBookById(params)
-    except Exception as e:
-        print(e)
+# def ubah_data(**params):
+#     try:
+#         db.updateBookById(params)
+#     except Exception as e:
+#         print(e)
 
 # params = {
 #     "id":"606ebe17a507264ac3df1d96",

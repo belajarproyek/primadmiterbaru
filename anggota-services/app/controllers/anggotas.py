@@ -14,10 +14,13 @@ def shows():
         user = {
             "id" : items[0],
             "nama" : items[1],
-            "tgl_lahir" : items[2],
-            "alamat" : items[3],
-            "jenis_kelamin" : items[4],
-            "email" : items[5]            
+            "nia": items[2],
+            "tempat_lahir": items[3],
+            "tgl_lahir" : items[4],
+            "image": items[5],
+            "alamat" : items[6],
+            "jenis_kelamin" : items[7],
+            "email" : items[8]            
         }
         result.append(user)
         
@@ -28,10 +31,13 @@ def show(**params):
     user = {
         "id" : dbresult[0],
         "nama" : dbresult[1],
-        "tgl_lahir" : dbresult[2],
-        "alamat" : dbresult[3],
-        "jenis_kelamin" : dbresult[4],
-        "email" : dbresult[5]            
+        "nia": dbresult[2],
+        "tempat_lahir": dbresult[3],
+        "tgl_lahir" : dbresult[4],
+        "image": dbresult[5],
+        "alamat" : dbresult[6],
+        "jenis_kelamin" : dbresult[7],
+        "email" : dbresult[8]            
     }
         
     return jsonify(user)
@@ -56,7 +62,13 @@ def token(**params):
     if dbresult is not None:
         user = {
             "nama" : dbresult[1],
-            "email" : dbresult[5]            
+            "nia": dbresult[2],
+            "tempat_lahir": dbresult[3],
+            "tgl_lahir": dbresult[4],
+            "image": dbresult[5],
+            "alamat": dbresult[6],
+            "jenis_kelamin": dbresult[7],
+            "email" : dbresult[8]            
         }
         expires = datetime.timedelta(days=1)
         # expires_refresh = datetime.timedelta(days=3)
@@ -71,6 +83,6 @@ def token(**params):
         data = {
             "message":"Email tidak terdaftar"
         }
-        return make_response(jsonify(data),200)
+        return make_response(jsonify(data),400)
         
     # return jsonify(data)

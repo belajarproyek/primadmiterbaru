@@ -24,14 +24,14 @@ class database:
         result = self.mongo_col.find(query)
         return result
     
-    def insertInstansi(self,document):
-        self.mongo_col.insert_one(document)
+    # def insertInstansi(self,document):
+    #     self.mongo_col.insert_one(document)
     
-    def updateInstansiById(self,**params):
-        query_1 = {"_id":ObjectId(params["id"])}
-        query_2 = {"$set": params["data"]}
-        self.mongo_col.update_one(query_1,query_2)
+    # def updateInstansiById(self,**params):
+    #     query_1 = {"_id":ObjectId(params["id"])}
+    #     query_2 = {"$set": params["data"]}
+    #     self.mongo_col.update_one(query_1,query_2)
     
-    def deleteInstansiById(self, params):
-        query = {"_id":ObjectId(params["id"])}
-        self.mongo_col.delete()
+    # def deleteInstansiById(self, params):
+    #     query = {"_id":ObjectId(params["id"])}
+    #     self.mongo_col.delete()
