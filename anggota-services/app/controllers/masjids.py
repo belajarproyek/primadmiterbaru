@@ -20,6 +20,7 @@ def shows():
             user = {
                 "nama" : items[0],
                 "namamasjid" : items[2],
+                "idinstansi" : items[4],
                 "namainstansi" : items[5],
                 "provinsi" : instansidetail['provinsi'],
                 "kota" : instansidetail['kota'],
