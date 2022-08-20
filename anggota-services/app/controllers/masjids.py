@@ -19,10 +19,10 @@ def shows():
             print(instansidetail)
             user = {
                 "nama" : items[0],
-                "masjidid": items[1],
+                # "masjidid": items[1],
                 "nama_masjid" : items[2],
                 "alamat" : items[3],
-                "id_instansi" : items[5],
+                # "id_instansi" : items[5],
                 "nama_instansi" : items[6],
                 "periode" : instansidetail['periode'],
                 "provinsi" : instansidetail['provinsi'],
