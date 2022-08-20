@@ -21,7 +21,7 @@ def shows():
                 "nama" : items[0],
                 "masjidid": items[1],
                 "nama_masjid" : items[2],
-                "alamat" : items[4],
+                "alamat" : items[3],
                 "id_instansi" : items[5],
                 "nama_instansi" : items[6],
                 "periode" : instansidetail['periode'],
