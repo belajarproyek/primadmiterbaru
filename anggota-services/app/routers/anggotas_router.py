@@ -18,12 +18,12 @@ def insertUser():
     params = request.json
     return anggotas.insert(**params)
 
-@app.route("/user/update", methods=["POST"])
+@app.route("/user/update", methods=["PUT"])
 def updateUser():
     params = request.json
     return anggotas.update(**params)
 
-@app.route("/user/delete", methods=["POST"])
+@app.route("/user/delete", methods=["DELETE"])
 def deleteUser():
     params = request.json
     return anggotas.delete(**params)

@@ -49,11 +49,19 @@ class database:
         cursor = self.db.cursor()
         cursor.execute(crud_query)
     
+    # def updateUserById(self, **params):
+    #     userid = params['userid']
+    #     values = self.restructureParams(**params['values'])
+    #     crud_query = '''update anggotas set {0} where userid = {1};'''.format(values, userid)
+
+    #     cursor = self.db.cursor()
+    #     cursor.execute(crud_query)
     def updateUserById(self, **params):
         userid = params['userid']
-        values = self.restructureParams(**params['values'])
-        crud_query = '''update anggotas set {0} where userid = {1};'''.format(values, userid)
-
+        values = self.restructureParams(**params)
+        crud_query = '''
+            UPDATE anggotas set {0} where userid = {1};
+        '''.format(values, userid)
         cursor = self.db.cursor()
         cursor.execute(crud_query)
     
