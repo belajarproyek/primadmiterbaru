@@ -33,7 +33,7 @@ def shows():
     else:
         result=dbresult
         
-    return jsonify(result)
+    return jsonify({"masjid": result})
 
 @jwt_required()
 def add(**params):
@@ -61,5 +61,5 @@ def changeStatus(**params):
     
 
 def getInstansiById(data):
-    instansi_data = requests.get(url="http://192.168.1.8:8000/instansibyid",data=data)
+    instansi_data = requests.get(url="http://127.0.0.1:8000/instansibyid",data=data)
     return instansi_data.json()

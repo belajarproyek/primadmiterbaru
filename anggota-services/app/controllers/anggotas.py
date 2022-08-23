@@ -5,7 +5,7 @@ import json, datetime
 
 mysqldb = database()
 
-@jwt_required()
+# @jwt_required()
 def shows():
     dbresult = mysqldb.showUsers()
     result = []
@@ -24,7 +24,7 @@ def shows():
         }
         result.append(user)
         
-    return jsonify(result)
+    return jsonify({"user":result})
 
 def show(**params):
     dbresult = mysqldb.showUserById(**params)

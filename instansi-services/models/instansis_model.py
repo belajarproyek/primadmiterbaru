@@ -20,7 +20,7 @@ class database:
         return result
     
     def searchInstansiByName(self, **params):
-        query = {"nama" : {"$regex": "{0}".format(params["nama"]), "$options": "i"}}
+        query = {"namainstansi" : {"$regex": "{0}".format(params["namainstansi"]), "$options": "i"}}
         result = self.mongo_col.find(query)
         return result
     
