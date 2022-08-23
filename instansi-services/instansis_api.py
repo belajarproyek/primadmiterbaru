@@ -15,14 +15,14 @@ def search_instansi_by_name(**params):
         instansi["_id"] = objIdToStr(instansi)
         data_list.append(instansi)
     print(data_list)
-    return {"instansi":data_list}
+    return data_list
 
 def search_instansis():
     data_list = []
     for instansi in db.showInstansis():
         instansi["_id"] = objIdToStr(instansi)
         data_list.append(instansi)
-    return {"instansi": data_list}
+    return data_list
 
 def search_instansis_id(**params):
     result = db.showInstansiById(**params)

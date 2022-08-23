@@ -24,7 +24,7 @@ def shows():
         }
         result.append(user)
         
-    return jsonify({"user":result})
+    return jsonify(result)
 
 def show(**params):
     dbresult = mysqldb.showUserById(**params)
