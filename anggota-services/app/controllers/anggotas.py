@@ -5,7 +5,7 @@ import json, datetime
 
 mysqldb = database()
 
-# @jwt_required()
+@jwt_required()
 def shows():
     dbresult = mysqldb.showUsers()
     result = []
@@ -70,7 +70,7 @@ def token(**params):
             "jenis_kelamin": dbresult[7],
             "email" : dbresult[8]            
         }
-        expires = datetime.timedelta(days=1)
+        expires = datetime.timedelta(minutes=5)
         # expires_refresh = datetime.timedelta(days=3)
         access_token = create_access_token(user, fresh=True, expires_delta=expires)
         
