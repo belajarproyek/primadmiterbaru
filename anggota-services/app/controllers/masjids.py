@@ -61,5 +61,5 @@ def changeStatus(**params):
     
 
 def getInstansiById(data):
-    instansi_data = requests.get(url="http://192.168.1.14:8000/instansibyid",data=data)
+    instansi_data = requests.get(url="http://192.168.1.11:8000/instansibyid",data=data)
     return instansi_data.json()
